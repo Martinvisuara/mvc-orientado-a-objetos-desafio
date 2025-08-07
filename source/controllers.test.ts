@@ -8,7 +8,7 @@ const CONTACTS_FILE = __dirname + "/contacts.json";
 
 // Limpiar el archivo antes de cada test para asegurar consistencia
 test.beforeEach(() => {
-  jsonfile.writeFileSync(CONTACTS_FILE, []);
+  jsonfile.writeFileSync(CONTACTS_FILE, "[]");
 });
 
 test("Testeo el constructor del controller", (t) => {
