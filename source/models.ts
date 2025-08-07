@@ -14,8 +14,11 @@ class Contact {
 class ContactsCollection {
   data: Contact[] = [];
   load() {
-    const json = jsonfile.readFileSync(CONTACTS_FILE);
-    this.data = json;
+    try {
+      this.data = jsonfile.readFileSync(CONTACTS_FILE);
+    } catch {
+      this.data = [];
+    }
   }
 
   getAll() {
